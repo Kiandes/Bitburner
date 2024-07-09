@@ -44,7 +44,7 @@ export async function main(ns) {
 
         // caculates number of threads for weak
         let serverSecutityDiff = Math.ceil(ns.getServerSecurityLevel(server) - ns.getServerMinSecurityLevel(server))
-        return serverSecutityDiff / ns.weakenAnalyze(1)
+        return Math.ceil(serverSecutityDiff / ns.weakenAnalyze(1))
     }
 
     function calculateGrowThreads(server) {
